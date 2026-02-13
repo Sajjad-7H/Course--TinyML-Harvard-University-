@@ -35,6 +35,14 @@ TinyML is widely used in:
 
 ---
 
+## 🖼️ Project Image
+(Add your project image below)
+
 ```markdown
 ![TinyML Image](img1.png)
+
+### Mail me 
+“If you need the video, please contact me at this email. I will send the video.”
+### 
+sajjadhossen868@gmail.com
 
