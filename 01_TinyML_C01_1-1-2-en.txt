@@ -1,0 +1,112 @@
+VIJAY JANAPA REDDI: Welcome back.
+In this video, I'm going to talk to you about who this course is aimed at,
+as it is a very common question that I get from people.
+When we designed this course, we wanted to make this course
+so that it's broadly accessible.
+We wanted you to be able to take this course,
+no matter where you are, who you are, or how old you are.
+TinyML is for everyone.
+We want to empower each and every single one of you
+with access to cutting edge education.
+Now, let me be a bit more specific, and tell you
+who this course might be really helpful for.
+For starters, you might be a student.
+You might be wanting to learn everything about ML.
+You might be a student in high school, you might be a student in college,
+or you might just be a lifelong learner.
+Either way, we want to help you expand your knowledge of ML.
+Now, if you're new to machine learning, this
+is a great starting point for getting your feet wet with ML.
+That said, if you know about ML, you will also learn something new.
+Because we will be focused on tiny machine learning.
+What are the aspects specifically important for deploying
+machine learning on tiny devices?
+I do want you to understand one thing, is that this
+is an applied machine learning course.
+In other words, we won't be getting caught up in theory and the math
+behind a lot of machine learning.
+There are a lot of wonderful courses out there, and we will point you to them.
+But in this course, we're going to focus very much on the applied side
+of deploying machine learning.
+How do we engineer these systems?
+Now, as a student, if you know about ML, you
+are definitely going to expand your knowledge.
+Now, if you don't know about ML, you are definitely going to learn about ML.
+Now, the second cohort is practitioners.
+Now, you might be a practitioner who is interested in building
+a TinyML application, a product, a new innovation.
+Well, if you want to be able to do that successfully,
+you're going to need to learn a lot about cross-layer design that's
+involved in TinyML.
+Ranging from the applications to the run times to the hardware.
+And in this course, we're going to expose you to that vertical stack.
+And by the end of this program, you will not only have designed tiny models,
+and learned the software stack that is needed for them,
+but you would also have effectively deployed it on a tiny little computer.
+So that would give you full coverage.
+And therefore, I believe you will be able to build a TinyML
+application by the end of this program.
+Now, you might be an engineer working at a company.
+And you might be thinking, hey, I want to hone my skills
+as the industry is evolving.
+Well, this course is definitely meant for you in that case.
+You could be an ML engineer wanting to deploy TinyML
+so that you can learn about new hardware that's coming out.
+How do I take these big machine learning models and make them really small?
+Well, you need to have a deep appreciation for the resource
+constraints that these small little embedded devices tend to impose.
+Or it might be the other way around.
+You might be a hardware engineer wanting to gain exposure to machine learning.
+And you want to understand what are the concepts,
+and what does it mean to have a solution so that you can tackle the end
+to end system challenges for TinyML?
+We will be catering to both cohorts in this.
+You can go from the top, down to the bottom, or start at the bottom
+and work your way up.
+To sum it up, we have effectively thought this course through so as
+that we can reach a broad audience.
+And my wish is to really empower each and every single one of you
+with the possibility to advance your knowledge, advance your career,
+and start building products that can change
+the world, one tiny step at a time.
+So you must be wondering, well, that all sounds good.
+Now, how do we actually go about doing this?
+Do I have all the chops and the know how so I can actually
+keep up with the course materials?
+Don't worry, we got your back.
+Well, when we start off the course, we're
+not going to make any assumptions about what level of machine
+learning you have, or what level of embedded systems knowledge you have.
+In Course 1 for instance, when we get into the fundamentals of TinyML,
+we're going to focus very much on just having the basic skills of scripting.
+You've got to be able to program in Python.
+Nothing too advanced, as programming is one
+of those things you can pick up on the fly,
+but you've got to know basic scripting.
+As we go into Course 2, where we will be focused on the applications of TinyML,
+we will be using a lot of what you know about Python
+and building applications in a Google Colab environment.
+I'll talk about Colab much more later on.
+But for now, think of it as some sort of web page
+where you go to write your Python code.
+That's about it.
+Finally, when we go into Course 3, this is where things change a little bit.
+You will continue to program in Python, but you will also need a little bit
+of C and C++ programming background.
+Nothing overly complicated like virtual functions and so forth.
+Quite simple, you know, like C and C++.
+And when things get tough, we'll be there to kind of help
+you nudge along the way,
+One other thing that we'll be introducing in the final course
+is that, because we will physically be programming the microcontroller,
+you're going to need to use an IDE.
+And so, that's an Interactive Developer Environment,
+and we're going to provide you an IDE that allows you
+to program that microcontroller device.
+Don't sweat about it.
+I'm just trying to give you a big picture overview of what to expect over
+the course of the entire program.
+With that, you will be able to finish this program,
+and you will be one of the unique people who can
+claim that you're a TinyML specialist.
+And I'll look forward to seeing you the next time.

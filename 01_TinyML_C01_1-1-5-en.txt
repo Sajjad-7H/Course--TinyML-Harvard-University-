@@ -1,0 +1,61 @@
+VIJAY JANAPA REDDI: Hi, In this video, I'm
+going to focus on how the overall course is structured in order to help you
+maximize the value out of the program.
+There are many different things that are going to help you learn,
+starting from videos all the way down to the quizzes.
+I'm going to step you through each one of these.
+And I'm going to help you understand how to use them,
+so that your learning is maximized.
+First and foremost, you've got videos.
+These are the lecture components of the course that are mainly focused
+on introducing new concepts and topics.
+Then, we supplement these videos with reading material.
+These reading materials help you get a deeper perspective into topics
+and they provide additional insights and examples.
+We also want you to engage with one another,
+so there are forums that will provide channels
+as a means to interact with all the students that are taking the course.
+And this will help foster critical discussions around thematic topics,
+for example, around responsible AI.
+Then there are Google Colabs.
+These effectively are the hands on learning part where you will actually
+be programming the machine learning components
+and trying to understand how to solve some interesting tinyML challenges.
+And we'll be doing this using Google's Colab.
+Don't worry about Google Colab.
+I'll talk about it later on, if you're not familiar with it.
+Then there are assignments.
+These assignments are going to challenge you
+to put together all that you have learned
+and apply your practical skills on tasks that you've
+gone through with the Colabs for courses one and two.
+And then in the third course, you will actually
+be needed to physically put them onto a real device.
+This is a real hands on part.
+That's one of the things that's going to make this course quite unique for you.
+Then you've got quizzes.
+These are formative quizzes which will act as knowledge checks.
+Think of these quizzes as things that enable
+you to take a little breather from all that you've
+gathered so far in a couple of videos, and then
+reflect back on the critical nuggets.
+So these quizzes are going to be helping you kind of figure
+out what are the most important concepts that have been covered.
+And then of course come the tests.
+These tests are only meant for the people who
+are pursuing the certificate program.
+And they act as formal knowledge checks.
+And these tests are going to be reflecting back
+on the videos, the Colabs, the quizzes, the assignments, the readings,
+the discussions.
+So everything is going to be coming together in these tests.
+And that's where we will be helping you reflect back
+and gain confidence that you are in fact learning the material.
+I hope you see that we have thought through the course very systematically.
+And for every single aspect of the course, there are different mediums.
+So you might be a learner who learns well from videos.
+I might be a learner who learns well by reading material.
+So we've tried to create a balance so that everybody
+finds a medium that helps them learn the most in the most effective way.
+With that, I'll see you in the next video.
+Thank you.

@@ -1,0 +1,238 @@
+VIJAY JANAPA REDDI: Welcome to TinyML.
+Tiny machine learning, or TinyML, is an emerging field
+that is at the intersection of machine learning and embedded systems.
+An embedded system is a computing device that
+usually is small, or tiny, like the one that I'm
+holding in my hand, that operates with low power, extremely low power.
+So much so that some of these devices can
+run for days, weeks, months, sometimes even years
+on something like a coin cell battery.
+And TinyML is all about taking just a small, little computing device
+and enabling it with machine learning smarts.
+Now, what is machine learning?
+Well, machine learning is a subfield within AI,
+or artificial intelligence, that uses a lot of data
+to infer interesting patterns about new data that it's seeing.
+Together, the intersection of embedded systems and machine learning
+is going to unlock a whole new world, and that's that world
+that I'm going to introduce you to in this program.
+I, for one, truly believe that TinyML has the potential
+to transform the world that we live in.
+And in this program, we're going to take you
+through that journey of uncovering the possibilities
+and learning how to enable those possibilities.
+Who knows?
+You might very well be building the next major industry, based on TinyML,
+from the lessons that you have learned from this course.
+Now, before I get started, allow me to introduce myself.
+My name is Vijay Janapa Reddi, and I'm a faculty member at Harvard.
+And I'm very excited to be teaching you everything
+I know about this cutting-edge field.
+Before we get started, let's level the playing field
+and start with a crisp definition of what is TinyML.
+Well, TinyML, or tiny machine learning, is a fast-growing field
+of machine learning technologies and applications that
+include algorithms, hardware, and software that
+are capable of performing on-device sensor data analytics,
+doing so at extremely low power, typically in the order of milliwatts,
+so that we can enable always-on machine learning
+use cases on battery-powered devices.
+Now, that's a whole lot of words to crisply define what is TinyML.
+I wanted you to have a strong definition,
+but let me give you a more intuitive example.
+How many of you have said, OK, Google?
+What happens when you say that?
+The machine wakes up and it knows to respond to you.
+OK, fine.
+You might have said, hey, Siri.
+Same thing, the machine wakes up and responds back to you.
+All right, all right, fine.
+Perhaps you have said Alexa.
+No matter what you have said, they all represent an important application
+of what's in TinyML.
+It's called keyword spotting or hotword detection.
+Now, the key difference is that while they resemble
+the application of TinyML, these devices are largely plugged into the wall,
+or they require charging.
+I'm talking about putting TinyML onto these tiny, tiny little processors that
+are on this board and then forgetting about them.
+There's no power being given to them outside of that little battery.
+That's the difference between the applications that we're seeing today
+and where we're going into the future.
+Now, while this is an example application of TinyML,
+let me talk about some of the more forward-looking examples.
+Let's talk about autonomous drones, drones that are completely independent,
+that operate fully by themselves.
+Imagine autonomous drones that are able to do video surveillance in order
+to keep us safe by figuring out what's a threat, what's normal, and so forth.
+Or they might be able to venture really far out into places where humans cannot
+go.
+For instance, later on, we'll talk about how
+drones are being used in the Amazon forest for preserving our wildlife.
+So for instance, when the forests are deforested,
+we actually can go in and autonomously plant new seeds
+so that we can keep the forest growing.
+Or we can talk about mobile robots, which
+are extremely important in the service industry for taking
+care of the elderly in the future.
+Well, these mobile robots need to be moving around,
+constantly sensing the information around them.
+And machine learning is very good at that problem.
+And we need to be able to pack in lots of sensors into these robots
+and do so with extreme efficiency, so they can operate on battery power.
+Or think about smart glasses, right?
+These are passive in the sense that they don't proactively do anything.
+But imagine smart glasses in the future.
+Imagine a situation where you go out into the mall, or marketplace,
+or you're at a party.
+And how many times have you had to say, I'm sorry,
+could you repeat that again, right?
+Imagine if these glasses had contextual hearing.
+In other words, they're able to see where you're glancing.
+And then based on that, be able to pick up
+the voice signals or the sound signals that are coming there
+and then amplify them so that only the things that are in your context
+will actually be richer.
+That way, you have a better experience, right?
+Or imagine, for instance, you're in a new country
+and someone's talking to you in a language that you don't know.
+And imagine your glasses are able to do real-time machine translation
+and then be able to feed it into your brain.
+These are some remarkable applications.
+Or let's talk about TinyML in the medical area.
+Here, I'm showing you Micra, which is from Medtronic.
+It's the world's smallest pacemaker that goes into your heart.
+It's small, it's non-invasive, and it's completely self-contained.
+And if this device had machine learning in it,
+it would be able to, perhaps, proactively tell you
+how your heart's doing or be able to do things for you
+so that you have a better, healthy life choice.
+Or let's talk about what Elon Musk is doing,
+where he's implanting chips inside the brain so that they can send
+signals to understand brain activity.
+By measuring the electrical signals that are emitted by neurons,
+we might be able to learn things about our brain.
+And in doing so, we might be able to cure diseases
+like treat depression, insomnia, or any other disease.
+Now, let me take a step back and remind you that technology is not always
+about looking into the future.
+Sometimes it is about what you can do here and now,
+and I'm going to tell you that we can use TinyML to make this world a better
+place.
+We can use TinyML to take care wildlife.
+We can use TinyML to improve the quality of our oceans
+or take care of the icecaps, things that are critical to our survival.
+We might also be able to use TinyML to take care of our forests.
+Now, over the course of the program, I'm going
+to introduce you to a variety of these different kinds of applications
+where the fundamental technology that sits in the palm of my hand,
+for instance, has the ability to actually have impact at a global level.
+So let me be specific and give you an example.
+Here, I'm talking about an ElephantEdge project.
+There's a growing crisis in Africa right now
+about diminishing elephant population.
+So organizations are coming together in order to protect the gentle beast.
+Now, if we're not careful, these elephants can be wiped out in 10 years,
+so it's a very important thing.
+So how do we help take care of the gentle giants?
+Well, we need data.
+We need lots of data.
+So what if we could build some sort of intelligent device
+like a smart collar that goes on these elephants that
+is totally non-intrusive, does not harm them, but is there,
+constantly sensing interesting signals so that we
+can help them have a better life?
+Let me be specific.
+For instance, if we had a smart collar, we
+might be able to do risk monitoring from poaching.
+What if we could build machine learning models that
+could be put onto small, little devices where
+they were able to figure out if, for instance, the elephants were moving
+into a high-risk area and then be able to send real-time notification to park
+rangers to keep them safe?
+The park rangers could then react to them
+and to make sure that the elephants go away from that danger zone.
+Or perhaps, we can do human conflict monitoring.
+We could build intelligent machine learning
+models that are able to sense and alert when elephants are heading into an area
+where, for instance, farmers live.
+So that they can proactively get out of the way
+or do something in order to make sure that they're safe
+and the animals are safe.
+We might be able to do activity monitoring.
+We might be able to learn things about the animals.
+When are they swimming, drinking water, or sleeping, and so forth?
+And by learning all these things, we might
+be able to take better care of them.
+We might also be able to do communication monitoring.
+What we mean by that is that by sensing sound,
+we might be able to understand how these animals are actually
+communicating together.
+But in order to do all of that, we need TinyML.
+We need to be right there where the data is, where that information, those
+sounds, those signals, where all of that is, so that we can do real-time machine
+learning.
+These are all remarkable applications of TinyML.
+So what I'm trying to say is that when you think of TinyML,
+don't just think about the future.
+Think about the here and now, how this technology
+that's potentially in your hand, right, has the ability to transform the world.
+Now, how are we going to achieve all of this, right?
+Those are some grand applications.
+Well, that's why I'm here.
+In this program where we have got three courses,
+course 1 is all about talking about what is the language of machine learning?
+That's what we're going to do in course 1.
+In course 2, we're going to talk about what are the applications of TinyML?
+We'll get a sneak peek into the variety of different applications,
+understand how to leverage the sensors, and so forth.
+In course 3, we're going to physically deploy the machine learning models
+that we build into these small, little devices.
+And in doing so, you will gain a lot of appreciation for the challenges
+in enabling this capability.
+But stick with me, and I promise you, by the time you finish this program,
+you are going to be very proud.
+You'll be one of the elite people coming out and saying, hey, I know TinyML.
+I know how to program embedded microcontroller devices
+with machine learning capabilities.
+Now, how are we going to do this?
+Well, there are three wonderful people who have come together,
+myself included, of course.
+We have brought multiple instructors together in order
+to give you the best quality education.
+In addition to me, there is Laurence Moroney
+who is a vivid online teacher who has taught many courses online.
+He comes from Google, and he'll give you a practical and hands-on introduction
+to the foundations of machine learning, the first course.
+He is brilliantly articulate and very engaging,
+and you will have a lot of fun learning from him.
+Then there is Pete Warden.
+Pete is the man behind the scenes of TensorFlow Lite
+Micro, the software that enables you to run
+machine learning on embedded devices.
+He and his team, which I've actually been fortunate to be a part of,
+have worked tirelessly to enable this technology
+and put that away on GitHub website, so that it's actually
+publicly-available for free.
+It's a remarkable achievement.
+And Pete is also from Google, so it's Google and Harvard coming together
+to give you the best education possible.
+I'm going to be with you through all three courses.
+Lawrence is going to be with you in course 1 and 2.
+Pete is going to be with us in course 2 and 3.
+Now, in addition to the instructors, there
+have been some amazing people working behind the scenes.
+Brian Plancher and Dhilan are the TAs who
+have been putting a lot of the material together with us.
+In addition to them, there are a remarkable number
+of people who have been very supportive of having this course for you.
+We will also be bringing in some specialized instructors who
+will teach you things like about responsible machine learning.
+How do you deploy AI into the field, but do so in a socially-responsible manner?
+And what are the implications if we don't do that?
+And how do we do that correctly?
+So we want to give you a full, holistic experience
+in enabling tiny machine learning.
+With that, I want to say that the future of machine learning is tiny and bright,
+and we're excited to see what you do.
+I will see you in the next course.

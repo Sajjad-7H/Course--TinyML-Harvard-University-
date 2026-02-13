@@ -1,0 +1,158 @@
+VIJAY JANAPA REDDI: Hi.
+In this video, I'm going to focus on what you're
+going to learn in the TinyML program.
+Specifically, I'm going to focus on the three core courses.
+And across all three courses, there are a certain set of fundamental principles
+we'll be going over.
+Now, recall that Course 1 focuses on the fundamentals of TinyML,
+where we're focusing primarily on the language of machine
+learning, with an interesting twist towards timing.
+In Course 2, we're going to be talking about different applications of TinyML,
+like keyword spotting, i.e., when you say, Alexa, or when you say,
+OK, Google.
+There are many other interesting applications we'll touch on.
+Course 3, we're going to learn how to deploy that
+onto our tiny little microcontroller.
+Now, across all three courses, there are a set of core areas
+that we'll be walking through.
+And those are machine learning, applications, and embedded systems.
+We will be touching on all three of them to the extent needed.
+But the critical thing about this program
+is that we'll be focusing mostly on the interactions that
+are going to be happening.
+For instance, you recall that we talked about ElephantEdge previously.
+In ElephantEdge, what's the application?
+The application is taking care or protecting the gentle giants.
+Now, what's the ML aspect?
+The ML aspect is actually doing risk monitoring, activity detection,
+and communication monitoring based on the sensors that
+are going to be on the caller.
+So the critical nugget, the intersection,
+really is this, that you need to understand
+the fundamental needs of the application, and understand where,
+and why, and how the ML is going to serve a purpose.
+In a similar way, when we're talking about TinyML applications, when we're
+looking at, hey, we've got this interesting thing that the application
+can benefit from ML, well, then the question becomes,
+how do I actually deploy this onto this tiny little microcontroller that
+has very limited capability in terms of computing
+and in terms of power consumption, and as long as--
+they don't last forever if you keep running them
+with a lot of demand on the compute.
+So how do you bridge these two worlds together?
+Well, to do that, you need to understand the hardware's performance
+constraints and power constraints.
+And at the same time, you need to figure out
+how you can take that machine learning and deploy it on the device in a way
+that it can run all the time.
+So those interactions require you to understand not only the machine
+learning but also the hardware constraints,
+because it's that marriage that enables TinyML.
+Now, there's also the aspect of knowing what the application needs
+and then intersecting that with what the hardware needs to be.
+So you might have an interesting application, like the Smart Glasses
+that we spoke about earlier.
+Well, what does this application really need in terms of the form factor?
+Well, clearly, it's Smart Glasses.
+So it has to be really thin.
+But at the same time, that application demands
+you to have real-time characteristics.
+For instance, if you're doing real-time speech translation, where
+someone is talking to you and you're listening to it,
+and it's translating the words, and they're going into your ears,
+well, you want that to happen in seemingly same time.
+It cannot be like someone said something, and then 5 seconds later,
+it goes in your ear.
+Well, that's not going to help with the conversation.
+But all of that has to fit into the small little form factor, right?
+And that's that intersection between the application
+needs these characteristics and the embedded system
+needs to be in this form factor and so forth.
+You need to understand those interactions.
+At the end of the day, it's all about putting
+each and every single one of these round circles
+together, because these domains need to intersect.
+And that's when you actually enable TinyML.
+And that's what we're going to focus on.
+So how are we actually going to get about there?
+Well, first and foremost, I want to say that in this class
+you're going to really focus on understanding the content.
+But you're also going to have to practice it.
+So in order to practice it, what we're going to be doing
+is a lot of hands-on learning.
+So while I, or [? Lawrence, ?] or Pete talk to you about the concepts,
+we have a lot of assignments where you will actually
+be going through programming things in TensorFlow, which is the key thing.
+But not only that, we will be talking about the different variants
+of TensorFlow.
+And you need to understand this because these machine learning frameworks
+are specialized to do different tasks.
+So if you want to enable TinyML, you need
+to understand how TensorFlow needs to be adapted in order to be
+able to run on a tiny little device.
+And so we'll teach you about TensorFlow [? Lite ?] [? Micro ?] and then
+deploying it onto the device.
+Now, clearly you're going to have to solve certain tasks.
+So you will have to do programming off that.
+And you will be doing this in a Web IDE.
+And I'll talk about Google Colab later if you're not familiar with it.
+And you'll be deploying this onto a physical device
+by the end of the course.
+So you're going to first train all the software.
+And then finally, you will move it onto a physical hardware.
+Now, this physical hardware is also going
+to have you interface with a couple of sensors,
+which is very exciting because not only are you just getting
+a small computer that you'll also be physically connecting
+of a different part.
+So it'll give you a little bit of a taste for embedded systems.
+All this is going to come packaged in a nice little box for you.
+Or you will be able to order the parts for yourself.
+When you open up this box, there are a whole bunch of different things
+that'll enable you to build a bunch of different TinyML applications.
+Let's just take that small little microcontroller.
+If you look at that microcontroller, this thing is jam-packed with sensors,
+because TinyML is all about sensors.
+It's all about processing the data that's coming out of these sensors.
+So you have a color, brightness, proximity sensor.
+You have a digital microphone that can pick up sounds.
+You've got a motion, vibration, orientation sensor.
+You've got temperature, humidity, pressure sensor.
+All of these different sensors can enable a variety
+of different application use cases.
+Many of these sensors are quite critical to the kind of problems
+that people are trying to solve in the real world.
+So you have the right building blocks here.
+And all of this comes with an Arm Cortex-M4 microcontroller.
+And the microcontroller is effectively the processing engine,
+the heart of the system.
+And an Arm microcontroller is widely available in the real world.
+It is deployed nearly everywhere.
+So you will be dealing with a real microprocessor, where
+you could say that in the end class, that I've actually programmed
+this microcontroller to be able to do tiny machine learning, which
+is very exciting.
+Trust me on this.
+So you'll be not only dealing with the components of the board,
+but you'll also be packaging all of that excitement
+into interesting applications.
+For instance, we will be looking at something very similar to saying,
+OK, Google.
+We will train on a small little model that will respond to your words.
+And we'll use the vision sensor in order to be
+able to do interesting things from the camera input that's coming in,
+like detecting people.
+And we'll use the accelerometer data and the gyroscope data
+in order to get it to respond to things when your hand is moving, for instance.
+So we'll program some of these assignments in the software world.
+And then in Course 3, we'll actually take those applications
+and learn how to deploy them.
+Now, because it's an embedded system, you
+need to learn what the deployment means.
+It's not as straightforward, and that's the beauty about it.
+But once you learn the skill, you will have
+mastered a very, very powerful skill.
+So with all that said, I'm very excited to see how you're
+going to progress through the course.
+I promise you it's going to be exciting.
+So stick with me, and I'll see you in the next video.
