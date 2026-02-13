@@ -1,0 +1,303 @@
+[VIJAY JANAPA REDDI]: Welcome.
+In this section or series of videos that are about to follow,
+I'm going to focus on one critical message, which is, why is it
+that we say that the future of machine learning is tiny and bright?
+Specifically, I want to emphasize why we're increasingly
+seeing this dramatic interest towards making machine
+learning fit on tiny devices.
+Since I keep using the word machine learning,
+let's go back for a quick reminder.
+Now machine learning is a subfield of artificial intelligence
+that's focused on developing algorithms that
+can learn to solve problems by analyzing data for interesting patterns.
+In this course and program, we're going to specifically
+be looking at a very specific type of deep learning,
+which is a type of machine learning that leverages neural networks and big data
+to be able to make observations about interesting patterns in the data.
+Now, machine learning is something that is here to stay.
+It's something we're probably already using on a daily basis.
+For example, when you take a picture on your smartphone,
+it's more than likely that there is a machine learning
+voodoo that's kind of happening that, by the time the picture comes
+from the sensor over to your screen, it's been enhanced.
+If you like a beautiful picture, it's probably
+because there was some machinery rocket science going on in there.
+Well, there are other applications, like when you say, "OK Google," or, "Alexa,"
+or when you talk to these systems.
+Well, there's a lot of natural language processing going on in order
+to understand what you're saying.
+Something that we already take for granted.
+And then of course, there is the times when you go on social media
+and you give a thumbs up or you give a thumbs down.
+All of that is helping drive our interest and our patterns of behavior
+on the network, because these machine learning systems
+are learning how to give us the information that we
+want to see more of.
+For instance when I read the news, I tend
+to read a very particular type of news.
+I'm not that much interested in all kinds of news.
+But by giving a thumbs up or thumbs down,
+we're actually training the systems in order to help them serve us better.
+Now these are great applications.
+Right?
+Now, to be more specific, there are many specific subclasses of machine learning
+that are of interest.
+For example, image classification, being able to tell whether the picture here
+has got a cat or dog.
+If there's a cat a bunch of pixels are being fed in
+and ultimately the machine learning network says, hey, it's a cat.
+Sometimes it might look at the same exact pictures
+and say it's a dog, which is completely incorrect.
+So machine learning systems are statistical or stochastic in nature.
+And so they're not always guaranteed to be correct.
+This image classification, being able to say whether it's a cat or dog,
+is one particular type.
+But of course, there are other interesting applications,
+such as object detection.
+Object detection is basically taking another image,
+but in that image being able to precisely localize and say that it's
+actually an orange versus an apple.
+Or you can even do instance level detections, where
+for every single orange that is in there,
+you're able to say that it is actually an orange,
+rather than just put a big box around all the oranges,
+saying that this whole collection is a set of oranges.
+So that's another type.
+Then there is segmentation, which is very heavily used, for instance,
+in autonomous cars, where the cars need to know where is exactly
+the human being in the picture.
+Where are the lanes of the road?
+Where are the shoulders in the road, for instance.
+So segmentation is a way of kind of colorizing or pixelizing
+the entire image into different categories,
+where all the pixels for a certain thing are of the same color.
+For instance, here, the purple color indicates that the side path is all
+tied together.
+So that's a side path.
+Then there is, of course, machine translation.
+Here is an example that comes out of Google's pipeline, where
+we're looking at how machine translation is actually implemented.
+If you recall earlier, I was talking about machine translation
+on smart glasses, where you might have contextual hearing.
+Well, if you want to do that, you've got to take
+a whole bunch of different words and then
+you've got to train a machine learning model.
+Think of it, for now, as a black box.
+And out of that comes this machine learning black box.
+It's able to make predictions on a particular language,
+and then you're able to do natural language processing with it, yet
+another example.
+Or recommendation systems, as I said earlier, you
+might be giving a thumbs up, thumbs down on different kinds of things,
+and that's actually driving your interactivity on the social networks.
+Now, all of these capabilities require a remarkable amount
+of horsepower, remarkable amount of computing capabilities,
+so what companies are doing, they are taking all these computers and jam
+packing them into data centers, that are all just
+being dedicated in order to provide machine learning capabilities today.
+These data centers are so big that they take up a big block.
+So if you ever see a big cement block that's
+kind of running around that looks about the size of a football field,
+well that's probably a data center.
+Now, what's really interesting is that in order
+to be able to provide that capability, companies like Google
+are building TPUs, tensor processing units.
+Or companies like NVIDIA are building GPU, graphics processing units.
+Both of these kinds of architectures, these computing systems,
+are capable of running machine learning extremely fast.
+And that's needed, because at the rate you and I are using those machine
+learning services, when we give a thumbs down
+or a thumbs up, for instance, that's a remarkable amount of energy that's
+being used.
+So people are having to build custom designs in order
+to support all of the demanding needs of machining applications.
+But building those big computing processors,
+packing them into big systems, and then putting them
+into a big giant data centers, well, big is not always better.
+I'll tell you why.
+Think about it.
+When you have a big data center like this, what can you do?
+You can't have interactivity.
+You can't carry a big data center in your pocket so you can take a picture.
+Right?
+Because when you take a picture, what do you want?
+You want that system to be able to quickly respond back to you.
+But if by the time you take a picture--
+and let's say it has to go to some other computer somewhere else,
+well, that's going to be slow.
+Right?
+But imagine being able to put all that computer capability
+inside your pocket on your phone.
+Right?
+Why?
+Because if you can do that, you can enable
+a variety of different applications that are
+much more responsive and interactive.
+Like for example, when you say, "OK, Google," the machine
+can immediately wake up and you can say schedule
+a calendar appointment or something.
+Or you might be able to do things like, "Hey, where in this text is,"
+something interesting.
+Q and A, as we call it, for instance.
+Or when you take a picture, you want to enhance or remove
+something out of the picture.
+Right?
+So for example, in this picture, we're seeing that you're
+able to enhance the image quality.
+There are all these things that you want to be
+able to do that are more close to you in a very responsive way.
+Now, if you compare a big computing system to a small little device, right,
+what are the big differences?
+If I pack a whole bunch of these big computers into a big cement
+block, well, that's a lot of power we're consuming.
+And if I'm looking at a smartphone, well, there's
+very low power, because it's a small little battery-based device.
+Now, if I look at it in terms of bandwidth, the amount of data
+that the data center can crunch, well, that's
+a lot of data that you can crunch, because all the machines
+are packed close to one another.
+So as long as the data is nearby, you can move things really fast,
+and do a lot of high performance computing.
+But if I'm on a smartphone, I don't have that much guarantee
+about the bandwidth, the ability to move the data off the phone
+or into the phone.
+How many times have you had a poor network connection?
+Where you're like, "Uh, why is this not loading?
+Let me refresh."
+Let me refresh that web page.
+Or for instance, sometimes you might have great connectivity and other times
+you don't.
+Right?
+So there's no guarantee about what the connectivity in the phone looks like.
+Or think about the use case, where for instance, you
+don't want to upload a lot of data or you
+don't want to download a lot of data because it costs you money.
+Right?
+So bandwidth, the amount of data you move and how quickly you can move it,
+is a critical concern.
+So you want, typically on a smartphone, you have low bandwidth
+but it's responsive.
+So in the data center, for instance, if I want to access it,
+it has a very high latency, because it's somewhere far away.
+So I actually have to send the data to it.
+So while I have a big amount of computational horsepower there,
+it's going to take me time to get there.
+Versus is if I do that machine learning on my phone, well,
+it's right there on my hand.
+So it can do it much faster than, imagine,
+moving all these bits over there and then bringing them all back.
+But of course, if I have machine learning running on my phone
+all the time, right, and I wanted to be on all
+the time-- remember that's what I said.
+The key thing is tiny ML.
+This is about always on machine learning.
+Well, what happens with your phone?
+How many times have you had to plug your phone into the charger?
+Sometimes I have to plug my phone in between half
+a day of my work, because I use my phone a lot.
+Right?
+And if it's constantly running something that
+is very demanding from the computing system,
+well, it's going to drain out of battery.
+Now, this is where things get really interesting,
+because we want to move from data centers to smartphones.
+But the reason we want to move that is because there's a lot of interactivity
+and a lot of interesting real time kind of behavioral patterns
+that we can exercise with machine learning,
+we can get even more as we make these devices completely pervasive
+in our homes.
+Think about a phone.
+A phone is only there wherever you are.
+There are so many times I forget where I put my phone.
+But if I have a smart device, in fact, I have about seven smart devices
+in my house, let alone my watches, these small little devices
+are increasingly becoming pervasive throughout us.
+And we want all of these devices to be intelligent,
+because then there's a lot of information
+that they can sense and gather so that they can help us.
+Certainly we have to be careful about that.
+We'll talk about that more later.
+For now I want you to understand the numerous possibilities, the kinds
+of devices that can all be intelligent.
+And if they can all be intelligent that means
+they're all processing data on them real quickly, rather than getting the data,
+then sending it off somewhere, and then bringing it back,
+which costs a lot of power, which means they're
+going to drain out of the energy.
+If you can process the data locally, then that's great.
+Think about your smartwatch, it does machine learning on the device.
+Think about my toothbrush.
+My toothbrush is a smart toothbrush.
+The Sonicare actually uses AI in order to help you brush better.
+You can have smart earbuds.
+Even a parking meter can be smart and tell you where to park or not park.
+Or for instance, the Nest thermostat, which controls the temperature,
+is actually a smart device, because it learns based on how you change
+and when you change the thing.
+So these devices are pervasive.
+They are everywhere.
+And imagine the possibilities if all these devices can actually
+be intelligent.
+And that's what's tiny ML.
+That's why people are so excited about tiny ML,
+because we're moving from thinking about all this amazing capability being
+some where in the cloud at some big corporation
+out there, versus you and I having that really rich experience
+right on our devices, being able to respond and interact
+with them in real time.
+Now the question comes, where's the big data element?
+Vijay, you told me that we're learning about machine learning, which
+is a subfield of AI, and we're going to learn about neural networks that
+have a lot of data.
+Machine learning needs lots of data.
+Well, where's all this data going to come from?
+If you think about the big companies, like when you talk about Facebook
+or you talk about YouTube, well, yes, there
+are millions and billions of users all feeding the data up into them.
+So yes, there's going to be big data and out of that big data,
+the genie of machine learning sprinkled some pixie dust, and out of that
+comes a neural network, this black box that's able to make predictions.
+Well, when we go to small devices, where's the big data?
+That's a good question.
+I'll blow your mind right now.
+If you look at the amount of data that's actually accessible at the end point,
+like at your watch or that toothbrush or that phone,
+there is an insane amount of data, because there's so
+many sensors that are out there at these end point devices.
+The five quintillion bytes of data produced every day by IoT devices
+today, less than 1% of all the data in these devices that we have today
+is actually being analyzed or used.
+And if you think that today machine learning looks amazing,
+imagine what machine learning is going to do and look
+like if you analyzed that 99% of that data that is just not being used today.
+Can imagine how different a world we would be living in?
+And that's what tiny amount is all about.
+That's why we say that the future of machine learning is tiny
+and it's bright.
+By being tiny, you can make it ubiquitous.
+You can have it everywhere.
+You can have it in every single endpoint device that is around you.
+Think about it.
+I want to give you a little piece of homework.
+Sit down for a moment and think, just look around your room, find a device
+and think about what it would mean if that particular device was intelligent.
+What if another device was intelligent?
+What if another device was intelligent?
+Can you imagine how--
+not only is it about making an individual device interesting,
+but maybe these now intelligent devices might actually collectively
+be able to do something that each one of them was not able to do.
+The possibilities are endless, and that's
+why the future of machine learning is tiny and it's bright.
+And with that, I want to leave you with the key nugget,
+that there are many diverse applications of ML already in the real world,
+and it's increasingly moving from being up in the cloud,
+where there are big data centers, to the end
+point, where you and I are physically interacting with these devices.
+And these end point devices, there are many, many of them around us.
+With that said, I look forward to going a little bit deeper
+in the next set of videos, specifically focusing
+on the technical challenges that are about to arise,
+even though we have this amazing opportunity.
+We'll learn more soon.
+I'll see you in the next video.
