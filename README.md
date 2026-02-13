@@ -35,9 +35,6 @@ TinyML is widely used in:
 
 ---
 
-## 🖼️ Project Image
-(Add your project image below)
-
 ```markdown
-![TinyML Image](image-name.png)
+![TinyML Image](img1.png)
 
