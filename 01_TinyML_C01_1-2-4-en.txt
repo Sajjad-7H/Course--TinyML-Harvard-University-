@@ -1,0 +1,254 @@
+VIJAY JANAPA REDDI: Hi.
+In this video, I'm going to focus primarily
+on what it takes to enable TinyML.
+So far, I've been super excited in talking
+to you about what the implications and what are
+the possibilities around TinyML.
+But what does it really take to make TinyML?
+The two components has been repeatedly said.
+There's an embedded systems component and then
+there's a machine learning component.
+This combination is really what TinyML comes out of.
+OK, well let's take an example of what that really means.
+Now, let's go back to our favorite example about OK, Google, right?
+Where we have a Google Assistant and then there's a physical device.
+The assistant, being the virtual machine learning part, the device
+being the physical component.
+Now, when you say "OK Google," the machine wakes up.
+Let's break this process down into the three fundamental steps that are there.
+The first step is that there is an input that's coming in.
+This input is an audio input because you're saying something
+and then the machine is effectively picking up your audio signals.
+Then there's a certain bit of processing that's actually happening.
+And in doing that processing is where you're actually figuring out
+what are you trying to communicate.
+Did you actually, in fact, mean to say, "OK Google," for instance,
+or "Alexa," or "hey, Siri?"
+That processing happens.
+And then there's a response that comes out
+where the machine physically generates some sort of output.
+It might be lighting up the lights on the device
+to say that it's actually heard you.
+For instance, on Alexa, you see a blue ring that goes around the top.
+In Google devices, for instance, some sort of light shows up usually.
+That's an actuation of the system responding back to you.
+The three fundamental steps are input, process, and output.
+This is fundamental to any embedded system.
+And it's also true to any machine learning system.
+That said, let's try and understand each one of these in greater detail.
+So when we talk about input, the input that's
+going into this TinyML device for instance, what kind of input
+can we have?
+Well, the critical thing about TinyML is that it's all about sensors.
+There are many, many different kinds of sensors.
+There are motion sensors.
+There are acoustic sensors.
+There are environmental sensors.
+There are biometric sensors.
+There are image sensors.
+There are four sensors, lots and lots of different kinds of sensors.
+I'm just showing you a general sprinkling of the possibilities here.
+In the particular example, "OK, Google," for instance,
+it's an acoustic sensor because it's a microphone that
+is actually picking up the signal.
+You might have biometric sensors for instance,
+things that detect a fingerprint, or your heart rate, and so forth.
+Here are two examples I'm showing you here.
+One is a glucose monitor from the Jacobs School at the University
+of California San Diego, where a simple little device just put on your skin
+can actually tell you what your glucose level is,
+which is very critical for certain patients.
+Or you could have electrocardiography kind
+of devices, things where, effectively, they're able to, just
+from a single touch, be able to pick up the EKG signal
+and effectively plot the voltage over time
+and give you a representation of what the electrical activity really
+looks like.
+Now, you can take that and you can couple that with much more
+intelligent activities like PPG.
+I can't even remotely try and pronounce that word that's on the slide
+right now.
+So I'm not going to try.
+But I'll give you a chance at it.
+Effectively, PPG is a means to actually analyze
+a signal at your blood conditions or changes in your blood conditions
+just by looking at light and how the light moves through the skin
+and hits the blood vessels.
+It's a remarkable thing that you can do.
+But if you had those kinds of fundamental sensors,
+right, which are inputs, then you can take that data
+And, you can do intelligent things with it.
+Now, there are also other kinds of sensors, like image sensors,
+for instance.
+Right?
+The image sensor that's coming with a kit--
+we have a small little camera.
+It's a high resolution camera that actually
+interfaces with your microcontroller and you get vision, right?
+There are many, many different kinds of sensors.
+Now, you get all of that data that's coming in from a sensor,
+or sometimes multiple sensors, and you get to process it.
+How do you process it?
+Typically, in order to run machine learning, you need big processors.
+Like, you need the big GPU processors, for instance.
+Or you need something like the Google TPU
+that I showed you in the previous video.
+Now, that's conventionally how people have been thinking
+about machine learning, big systems.
+It's a complex workload and it means big computing horsepower.
+OK, well, what does big really mean?
+Let's use a proxy here for indicating what is big and what's small.
+Let's look at the amount of area that it actually
+takes for the processor, the brains of the actual system.
+Right?
+If you look down here, the big processors are in the [INAUDIBLE]
+for over 500 millimeters squared.
+That is the effective area off the chip that we're talking about.
+Then let's talk about something smaller, like your phone, for instance.
+If you look at your phone, the A12 biometric processor from Apple,
+for instance, is much, much smaller.
+Right?
+It's only 83 millimeters squares, significantly smaller than the big GPU,
+for instance.
+Then, of course, you have your smartwatch.
+Smartwatch processor is even smaller, for instance.
+Right?
+If you look inside, this thing is only about 30 millimeters squared.
+Oh, that's pretty tiny.
+Now we're starting to get there from big, to small, to tiny.
+But we're not there quite yet.
+Let me show you something quite fascinating.
+We're just getting started.
+You ready for this?
+Look at something really small, like this KL03 processor from Kinetis.
+It's 3.2 millimeters squared.
+I really want you to go out and get a ruler right now
+and try and draw an area of 3.2 millimeters squared.
+It's a really small processor.
+And it consumes very little amount of power.
+In fact, it's a very small processor because it has little memory,
+little compute-- we'll be talking about these things at a level
+deeper in the next set of videos.
+But before we get there, the context that I'm trying to get you to
+is that machine learning is typically thought of being run on big systems.
+And now when we're talking about tiny, these
+are the kind of systems we're talking about.
+Just to kind of put that into perspective
+here is that little processor sitting on a golf ball.
+OK?
+Do you know how big a golf ball is?
+And then do you know how small each of the circles is on a golf ball?
+It's smaller than the circle, one of those little dents
+that you have on a golf ball.
+So it's really, really small is the point that I'm getting to.
+And if it's that small, you can imagine putting it virtually anywhere.
+You probably won't even notice it.
+All right?
+Now, here's the wham-bam.
+There are over 250 billion of these kinds of small, little processors
+everywhere in the world today.
+These are called MCUs, or microcontroller units.
+They are pervasive.
+They are here already.
+They're everywhere.
+They're inside your automotive car.
+They're inside your little iron.
+They're inside your little coffeemaker, everywhere.
+Now, the question is, can you make them smart by putting
+tiny machine learning on top of it?
+So, let's talk about these small, little processors.
+If there are 250 billion today, there are
+going to be many, many, many, many, many more in the coming few years.
+Now, this plot on the x-axis is showing you years.
+And the y-axis is showing you the millions of units
+that are going to get shipped, right?
+Now, look at the projected forecast values.
+These things are just going to continue growing.
+The demand for microcontrollers in the world
+is insatiable because we are building so many new devices now.
+So we're going to see this increasing trend.
+Now, what's going to happen?
+Is the price going to increase or decrease?
+Well, as the volume of these microcontrollers
+that are needed increases, it's fundamental economics.
+The price will drop because they are so pervasive.
+So the manufacturing cost, effectively, goes down.
+That's what this plot is trying to show you,
+that the price of a microcontroller is going to be below $0.50.
+It's almost going to be like $0.50, which is really, really, really cheap.
+Once you put this into the context of what
+these devices are capable of doing, especially
+when you enable TinyML on top of that.
+So, what I'm getting to is that these devices are pervasive,
+these devices are going to increase in quantity,
+these devices are very, very cheap.
+So that's exciting.
+Right?
+Now, what's also interesting is that these devices
+consume very little power.
+To put things into perspective, a big GPU like the one
+we showed you consumes 300 watts.
+You need to plug that thing into a serious wall connector.
+Now, as you go into something small, like the processor that's
+inside your phone, for instance, well, it consumes significantly less power.
+It only consumes about three watts of power.
+That's 100x smaller.
+Well, when you go to microcontrollers like the Syntiant processor
+that we're looking at here, which we'll actually come back and learn
+a bit more about later down in later courses,
+their machine learning processor only consumes 140 microwatts.
+It's astoundingly small.
+And this is what tiny machine learning computers are all about.
+It's about consuming milliwatts or less.
+And so these are very specific and concrete numbers
+of what the future is holding.
+So imagine if these processors consumed so little power,
+then we might actually be able to run them with real coin cell batteries.
+Because the coin cell battery is going to look very, very big compared
+to the small, little processor.
+And that's that potential we're talking about.
+And then that's that processing part.
+Now we come into the output.
+So let's say you make some-- you take in the input, you process it,
+and now you generate some output.
+What kind of output can a TinyML device do?
+Well, you can have physical actuation by, like,
+activating servos, for instance.
+Or you might be able to trigger speakers, generate some kind of signal.
+In the case "OK, Google," that's effectively what we're doing.
+The machine is waking up and it might say "hello"
+or something to that effect.
+But it's not always about physical actuation of physical devices.
+You can actually also have digital actuations.
+In other words, you do some input process
+and you extrapolate some kind of interesting data.
+And you send that digital signal out to a screen.
+And then that's useful information.
+So what are MCUs really enabling?
+Well, fundamentally, it starts from the fact that--
+MCUs are really small, so they can be completely pervasive.
+Second is that they consume very little power, which
+makes them really practical to be able to deploy
+for a long time on small, little batteries, right?
+So you don't need to tether them.
+You don't need to keep recharging them.
+Then, they're really cheap, which means they can be everywhere.
+And given that we're starting to build more number of devices,
+the demand for them is going to go up.
+And if you can put machine learning on them,
+you're going to uncover a whole new set of applications.
+And that's the beauty about it.
+By building these small, little, tiny embedded systems and coupling them with
+machine learning-- which we'll talk about soon--
+by building these two things together, we're going to unlock TinyML.
+So what I want you to take away in this particular video
+is that MCUs, or microcontroller units, are these small, little processors that
+are the fundamental building block of TinyML devices.
+OK?
+That's number one.
+Number two, these devices are going to be pervasive or ubiquitous
+because they're cheap and they're going to be high in demand.
+And number three, the question is, are they
+capable of running machinery models in them?
+We'll be getting into that soon in the next set of videos.
+I'll see you soon.

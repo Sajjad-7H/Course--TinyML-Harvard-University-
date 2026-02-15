@@ -1,0 +1,221 @@
+VIJAY JANAPA REDDI: Hello again.
+We are yet again on the topic of what are the challenges for TinyML.
+But this time around, I'm going to flip the knob a little bit.
+While previously we were talking about embedded systems,
+now it's time to shift our gear a little bit over to machine learning.
+Just the way an embedded system, both from a hardware and software
+perspective, were severely challenged, on a machine learning side,
+there are increasing trends that we're observing
+that might actually prove quite challenging to be
+able to unlock TinyML.
+But again, that's not a challenge that cannot be overcome.
+It's more of being able to critically think
+about what we need to do in order to be able to enable TinyML.
+So let me start off by talking about what
+are some interesting trends that we're seeing in machine learning
+and where it's going.
+Machine learning, think of it as a box.
+And for now, think of it as how big or small the box is.
+So what I'm showing you on the x-axis over time are effectively
+state-of-the-art models, machine learning models specifically
+in the context of NLP, natural language processing models and how big
+they've been getting over the recent years.
+On the y-axis are what we call as the number of parameters.
+Don't worry about it for now.
+Once we get into the fundamentals of TinyML
+and when you start talking about the actual machine learning mechanics,
+the internals, these are all terminologies you
+will get quite familiar with in case you're not familiar right now.
+Now, what we're seeing on the x-axis is time.
+And what we are seeing is that as time has been going by,
+the complexity of the models is increasing quite steadily.
+Now, if you look at the most recent model, which
+is called GPD3 from OpenAI, you will see that it's
+a remarkably complicated model as compared to all the other ones that
+are down there.
+Now, don't let the scale fool you.
+This model is so big, or this box is so big that the rest of them
+look quite small when, in fact, just a few months, a few years ago,
+those other models looked like they were big differences in terms
+of their sizes.
+What am I trying to get across here?
+The key point that I'm trying to get across
+is that machine learning models are growing fast in complexity.
+They're growing extremely fast.
+And moreover, in order to be able to keep up with them,
+the computing capability that is needed is growing remarkably fast.
+So, for instance, from 2012 when the boom of machine learning really
+came about thanks to AlexNet and the use of big GPUs,
+over the recent few years what we have seen
+this is remarkable escalation in terms of the computing capability needed
+to be able to get those models out there.
+So, for instance, between 2012 and roughly where we are now,
+the computing needs have grown by almost 300,000 times.
+300,000 times!
+That's an astounding amount of computational horsepower increase.
+So at the same time, they were able to provide these black box
+machine learning models that we get are able to provide
+incredible capabilities to us.
+But that said, it's requiring quite a bit of compute.
+Now, if I was to go even further back before AlexNet in 2012
+all the way back to the original source of history for machine running,
+back to the 1960s when all of this stuff was coming about,
+you'll see that back from 1960s to, say, maybe around 2010,
+there was roughly a steady, linear fast kind of pace.
+And then once we got into the recent years,
+there's been a remarkable steep increase in terms
+of the computational capability requirements.
+What is this saying?
+That our interest in machine learning has grown so much
+and we are spending so many cycles on this that the pace of innovation
+needed for unlocking it now is quite remarkable.
+Therefore companies like Google have been building these custom solutions,
+custom processors.
+Just the way you have an Intel or an AMD processor that
+is able to do general purpose compute, companies
+like Google have been building custom processors just to run one task,
+just the machine learning task.
+And they've been called TPUs.
+These are called Cloud TPUs because they live in the cloud,
+not literally in the cloud, but in big data centers that
+are remotely accessible to us.
+If you look at these cloud TPUs, oh, they look like big skyscrapers.
+They are physically about this much.
+And the heat sink on them is about this tall.
+The heat sink is there just to keep the processor cool
+because it has to take out so much heat because the computing is so intensive.
+And what are the companies doing?
+They're taking all of these processors and jam packing them
+into these big racks.
+So there are multiple cloud TPUs all packed in, row after row,
+column after column, right next to each other.
+And all of these things are being sandwiched into big data centers that
+are about the size of a football field.
+And they consume so much power that they actually
+have to be physically put right next to sources where there's water
+or, like, for example, in this picture of the Google data
+center in the Netherlands, you are seeing that it's actually
+right next to renewable energy because it costs a lot of money
+to power these things.
+The fundamental message that I'm trying to get across
+is that machine learning is becoming so computationally
+hungry that we have to build big processors just dedicated for them,
+then we have to sandwich and pack all of them together,
+and then we have to incorporate these big data centers almost
+near renewable resources and where water is
+so we can actually keep these things cool and power them efficiently.
+That's all wonderful.
+Now, how does this compare to TinyML?
+While things are getting bigger, I'm talking to you about the other side.
+I'm talking to you about TinyML.
+I'm talking to you about resource constraints
+and how to pack these things that are tiny little devices.
+So, the world is bifurcating in this.
+But that's the beauty.
+While there's a lot of interest in this, there's
+a lot of interest in the capabilities of TinyML
+because that's where the data lives.
+You remember I said there's about less than 1%
+of the data that's actually being used or analyzed for machine learning today.
+So despite the fact that we're building all
+of these remarkable machine learning processes and data centers,
+that's only dealing with a small fraction of the data
+that the world actually has access to where the sensors are
+producing a remarkable amount of data.
+And if you want to tap into that, we've got
+to figure out how we're going to take that big model
+and squeeze it right down into this small little form factor.
+Now, that's quite the challenge.
+Don't worry.
+We'll get you there.
+So, how have things been evolving just generally in machine learning?
+What this plot is specifically showing is
+on the x-axis is the amount of computational power needed,
+how many multiplies and accumulates and so forth need
+to be done, all the arithmetic.
+And the y-axis is the accuracy, how accurately in saying
+it's a dog or a cat.
+And the size of the circle is telling me how big
+or how lean and skinny the model is.
+So there are three pieces of information in this chart.
+Now, what I want to do is walk you through a little bit
+of that critical evolution and then set the stage
+as to where things need to go.
+So, the first and foremost model that people refer to
+is AlexNet, which happened in 2012.
+It basically was trying to predict a thousand
+classes from ImageNet data set.
+We'll talk about these things in much greater detail.
+But the key thing is that it is able to get an accuracy of 57.1%.
+And its model size was 61 megabytes in size.
+Then we wanted better accuracy.
+We want to be able to say a cat is a cat or dog is a dog.
+And we want to do that with better accuracy than 50-something percent.
+So VGGNet came along in 2014 as an example.
+That boosted the accuracy to 71.5%.
+But look at the size of the circle.
+What happened?
+We went from something that was smaller in the order of about 60 megabytes
+to something that's almost 10 times as big at 528 megabytes.
+That's enormous!
+Well, we realized we can't just keep making things bigger,
+so we tried to make them a bit more efficient
+while also improving the accuracy.
+So in 2015, Microsoft released ResNet, residual nets.
+And this particular network improved the accuracy to 75.8%
+while shrinking the model size as it was getting better.
+So we were doing great.
+We were starting to improve the machine learning models
+in order to make them both accurate and also be more cognizant of the size.
+Then as smartphones became very prevalent
+for machine learning deployments, that's when a major shift happened.
+And we saw the evolution move towards mobile nets.
+With mobile nets, we were saying that, no, the size is extremely critical.
+We cannot just think about accuracy.
+We have to make the thing small because it has to fit into your smartphone.
+So what did we do?
+We compromised on the accuracy, but we dramatically
+shrunk the size of the network.
+We made it only 16.9 megabytes.
+What I'm trying to get across to you here
+is that if you look at these couple of milestone markers
+that I have cherry picked for you, what I'm trying to say
+is that in our pursuit for better accuracy, better understanding
+of the data that we're being given and being
+able to see a cat is a cat or dog is a dog and being able to do so correctly,
+pushed us towards naively making things bigger.
+But slowly we understood the resource constraints of computing systems,
+that we cannot just keep making things bigger.
+Bigger's not always better.
+So then we strive to think of ways to actually make things smaller.
+As we go through this course, we will understand
+the fundamental nuggets behind a way something
+is much more efficient than another thing.
+But the critical message here is to understand
+the philosophical transitions that we're making as our journey continues
+through machine learning.
+Now, that's all great.
+MobileNet, this is an awesome example.
+Since then there have been other networks.
+But the critical point is that the networks
+that we have today, the models, they're still pretty big.
+They're 17 megabytes or maybe they're a handful of megabytes.
+It doesn't matter.
+The key nugget is that our little embedded microcontrollers only
+have a few kilobytes of memory.
+With a few kilobytes of memory, it's an order
+of magnitude difference between where usually state of the art sits
+and how we need to cram things in.
+So what did we do?
+Well, this is where things get interesting for us.
+Over the course of this program, we're going
+to learn how to take these models that are performing certain tasks
+and be able to compress them down.
+We will learn about a whole slew of techniques, some of which
+I'll allude to in the next video.
+But we're going to fundamentally look at,
+what are the critical questions that we have to understand
+or what are the critical questions we need to answer in order
+to be able to make these things fit into tiny embedded devices
+while we respect their constraints?
+With that, I'll follow up with you in the next video.

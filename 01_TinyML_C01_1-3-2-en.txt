@@ -1,0 +1,241 @@
+VIJAY JANAPA REDDI: Welcome back.
+In this video, I'm going to pick up on where we left off-- what
+are the challenges for enabling TinyML?
+Specifically, I'm going to continue to focus on the embedded systems
+side of the world.
+Now, recall that I said that when we're talking about an embedded system,
+there is a hardware component and then there's a software component.
+Previously we talked about the hardware.
+Now we're going to shift our focus to talk about some sampling of the issues
+that we're going to face when we look at the software.
+What is software?
+Let me open up this box for you.
+Typically, what you find is that there are generally
+three levels of abstractions.
+There is a high-level application, there are
+the libraries that provide support for those applications,
+and then there's the operating system that provides support
+for the libraries and the applications.
+Now, I'm going to start off by talking about the operating system.
+And specifically, what I want to help you understand here
+are the critical differences that you often
+find between what a general purpose computing
+system like a laptop or a desktop has versus what you will end up
+finding on an embedded system.
+And this difference that we see is worlds apart.
+And it's extremely important that you learn this difference,
+because it's through learning this difference that you
+gain deep appreciation for what a TinyML system really looks like,
+because that lays the foundation for building more complicated things on top
+of it.
+So when I talk about an operating system, when
+I'm saying an operating system for a laptop, desktop, or a server,
+by and large you will probably pick one of three operating systems--
+Microsoft Windows, Mac, or the Linux operating system.
+And if I talk about things on the smartphone side of the world,
+there are two operating systems.
+If I were to flip a coin, it would either be heads or tails.
+In this case, it might be either the Apple iOS
+or it might be the Android operating system.
+Now what's the beauty about having these widely deployed operating systems that
+run on most of the devices?
+Let's take the Android ecosystem for instance.
+An operating system and its associated parts
+are like the foundations for a house in my head.
+If you have a solid foundation, you can build a ground floor.
+On top of the ground floor, you can build a first floor.
+You can build a second floor.
+You have a lot of flexibility in what you can do.
+But it all comes down to having the right foundation.
+Now, in the context of the Android operating system,
+for instance, here I'm showing you the platform architecture of an Android OS.
+Because it's got the right pieces in place,
+you can build high-level abstractions of libraries and stack on top.
+Why is this important?
+Because if you provide the right levels of abstraction,
+then you can enable end developers who are at the highest level, application
+developers, to be able to write very interesting pieces of code,
+like the applications that you and I have on our phones.
+I have almost over 100 applications on my smartphone.
+Each one does a specialized thing.
+Now, that's the beauty if you have a right general-purpose operating system.
+This is very much true even if you look at a Windows, Linux, or Mac operating
+system.
+You have a nice base.
+And then on top of that, you can build different kinds of applications,
+which is very interesting.
+Now, when you go to an embedded system, what happens?
+This is where I would say that the world kind of falls apart a little bit.
+You see, in the embedded ecosystem, there
+isn't really that much of an operating system to say.
+Why?
+Because you take an embedded system, you typically
+want to specialize it to perform one task.
+Think of your smartphone.
+Do you only make phone calls on it?
+Or do you listen to music?
+Or are you surfing the web?
+And are you on social media?
+Or are you doing both at the same time nowadays?
+You can do all those things.
+You have all these flexible knobs and features that you have.
+But an embedded system is not a general-purpose system.
+Remember?
+That's what I said in the previous video.
+An embedded system is typically designed to perform one task,
+like wake up when I say "OK, Google."
+Something specialized like that.
+Or maybe it's designed to just do health monitoring and timing.
+When you have something specialized like that,
+then you typically don't care so much for having a general-purpose platform.
+Therefore, you don't see a lot of opportunity
+in terms of establishing an operating system.
+This is not to say that embedded systems don't have operating systems.
+I'm giving you here two examples--
+FreeRTOS and Arm Mbed OS.
+These are "operating systems" that exist, quote, unquote.
+But typically, you don't tend to have these installed,
+because when you add any kind of extra stack on the embedded system,
+it takes away resources.
+Remember, we're talking about memory and compute
+cycles that are very diminished and small,
+which means that if I put an Mbed OS or an RTOS,
+it might very well take up a little bit of those few kilobytes of memory
+I have, which means less left for the application.
+That becomes a problem, don't you think?
+So, therefore, you don't tend to see that.
+If you don't see a good baseline, then building efficient systems actually
+becomes quite critical, because every one of these systems
+is specialized-- too much specialization.
+So, let's go up one level and talk about libraries.
+So we know at the embedded system level we
+don't have that sort of uniform, nice Windows, Linux kind of ecosystem.
+What happens when you go to the library level?
+Here's a simple piece of code that calls np.SaveTheWorld.
+np is a library function call.
+And it calls it 10 times.
+We know it's a library function call, because we say import numpy as np.
+This library is a Python library that's almost ubiquitously
+available on any given system.
+The beauty of this library is that once you write the code in Python
+it can run on virtually any system.
+It can be an Intel processor.
+It can be an AMD processor.
+It does not matter.
+The code just runs uniformly.
+You don't have to worry about it.
+You just focus on running your code.
+And then seamlessly the code will run on any hardware.
+It creates a level of abstraction.
+So you don't need to worry about the nitty gritty details of the lower
+level.
+And that's the beauty about a general-purpose system.
+Now this portability is something that we take for granted.
+And we don't think about much.
+But when we go over to an embedded system, this becomes a real problem.
+Let me give you a very specific example by talking about the pi value.
+What is pi?
+22 divided by 7.
+Very simple.
+Well, that translates into a long floating-point number,
+or a number with a lot of values after the decimal place.
+I just chose pi at 22 by 7 because it's an exciting value, nothing special.
+But the key point here is that we have a floating-point value.
+Now, in a machine, a floating-point value
+is typically expressed as three components here-- sign, exponent,
+and the mantissa, or fraction.
+Don't worry about the details that's all available
+in the single-precision format for floating-point or double-precision
+format for floating-point numbers.
+The key thing that I want to talk about is how a floating-point value
+is operated upon.
+Typically, in any machine, if I have a value with decimal places,
+I might have two values, and I want to be able to add, multiply, divide,
+do whatever I want to do and generate some resulting value.
+Now, I can choose to implement this functionality as a library,
+as a function call, just the way I did with np.SaveTheWorld.
+And I'd say np dot multiply these two floating-point numbers.
+Well, that tends to be slow.
+So over the years, what's ended up happening
+is that we've gone from implementing these things as emulation
+mechanisms and software to actually physically
+putting data pack as we call it-- a floating-point data
+pack-- into the silicon itself, into the chip.
+And if we do this, well, the chip ends up running super fast.
+This was actually inside the Pentium processors for instance--
+Intel i486.
+If you open it up and you look inside, the die photo as we call it,
+there's a dedicated FPU that actually runs the floating-point arithmetic.
+And therefore, it can run really fast.
+That's great, because now, since then, it's proliferated,
+and virtually every chip has a floating-point unit inside it.
+Therefore, you write the code once, and things run anywhere.
+But that exposes a trade-off there.
+If you want universal code portability across any system, you write code once.
+Don't worry, it'll somehow magically run on any Intel processor
+or on any AMD processor.
+That's great, but you pay in terms of the cost.
+It costs money to actually physically implement it.
+It takes extra power, because when you turn the unit on, it burns power,
+because it's actually triggering logic.
+And it takes a lot of engineering effort to actually build it.
+And sometimes those enduring efforts can actually be quite costly.
+Why do I say that?
+Well, go back and look up as the FDIV bug by Intel.
+It's actually a real floating-point divide bug that Intel had,
+which got in mistakenly back in the '90s into one of its chips.
+So it was literally generating incorrect results
+when you were doing a divide instruction.
+So they had to go and pull all these things back-- all these chips back--
+and then fix it.
+Anyway, back onto the main line.
+The point is that you want uniform code portability, well,
+you're going to have to pay a price in terms of these things.
+Now, I could say forget the portability issues.
+I'm an embedded system.
+I want to be lean and mean and efficient.
+So I don't want to worry about general-purpose portability.
+If you run on my device, don't worry, you will run really well.
+And by the way, my device is going to be very cheap.
+It's going to consume low power.
+And it's going to be much more simpler to engineer,
+because that's what I choose to do.
+I choose to vertically integrate things and shave things off.
+Now, that's beautiful from one system.
+But what happens if I go to another system, and in another system,
+they actually have the floating-point capability?
+So assume that I start off on the right-hand side with the checkbox
+where have this wonderful FPU capability,
+and I write my code in my machine learning model accordingly.
+And then I move it over to another device,
+and it doesn't run, because I made the assumption
+that the processor had a capability for the floating-point unit.
+Well, now what do I do?
+The code that I've specialized for one system is now not portable.
+So this raises a fundamental question that you will now
+need to be thinking about.
+How do we enable TinyML uniformly across these vastly different embedded systems
+if there is lower platform portability?
+This is a critical challenge.
+And we will go over how we address this issue as we step through the course.
+So in summary, what am I trying to get to
+from the previous video about the embedded system hardware
+and in this about the embedded software?
+Embedded hardware is extremely limited in terms of performance,
+power consumption, and storage.
+These are the three fundamental things that I was trying
+to get across in the previous video.
+In this video, I'm talking about embedded software.
+And I said it's not as portable and as flexible as mainstream computing
+systems, because you don't tend to have these nice operating systems.
+You don't only have these nice ubiquitous libraries
+that run arbitrarily on any given embedded device.
+They tend to be very specialized.
+And we need to understand these kinds of nuances.
+And as we step through the course, we will
+be focusing on these kinds of things, because having this sort of knowledge
+is what is going to make you a much stronger machine learning engineer,
+for instance, who understands what it means to deploy TinyML.
+And with that said, in the next video, I'm
+going to pick up talking about machine learning challenges,
+specifically in the context of TinyML.

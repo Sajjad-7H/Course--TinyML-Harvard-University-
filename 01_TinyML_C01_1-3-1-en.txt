@@ -1,0 +1,165 @@
+VIJAY REDDI: So in this video, I want to focus
+on what are the challenges for TinyML.
+Now, as always, TinyML is a composition of embedded systems and machine
+learning.
+I'm going to continue to focus on the embedded system aspect
+before we transition over to the machine learning.
+And specifically, I want to talk about what are
+the challenges in the embedded realm?
+Because that sets the context, the scope,
+for how we deploy machine learning into that box.
+So, as with any system, an embedded system is like a regular computer.
+It's got components, like the hardware and the software.
+Both of these are critical to understand at an embedded system level,
+in order to know how we can actually deploy TinyML on them,
+or what we need to do differently in order to deploy TinyML on them.
+Hardware is the first area of focus for us.
+Now typically, when you take any kind of computing system,
+the hardware is made up of three fundamental building
+blocks: the compute, the memory, and the storage.
+The compute is the brain.
+It's effectively where you do the processing.
+The memory is where you temporarily store data.
+It's like a short-term memory.
+And your storage is your permanent hard disk.
+When you take the power off, it still remembers your data.
+So these are the three fundamental building
+blocks of any computing system.
+Now when you put these three things together,
+there is a difference between what a microcontroller is
+and what a microprocessor is.
+Now, if you're watching this video on a laptop or something like that,
+you've got a microprocessor that's doing a lot of the heavy lifting.
+A microprocessor is a much bigger piece of computing engine,
+versus a microcontroller, the thing that we were talking
+about in the previous video, of which there over 250 billion of them
+out in the world.
+Is a very different computing system as a whole.
+Let me emphasize these differences for you.
+When you take a laptop for instance, yes, there's
+a small part, which is called a microprocessor,
+but that microprocessor interfaces with a bunch of different system components.
+It's only one part of a bigger puzzle that ties together.
+So you have to buy the microprocessor.
+And then you put all the other components together.
+That's how you build a traditional desktop, for instance.
+A microcontroller, on the other hand, is very different.
+When you buy a microcontroller, it's already integrated.
+For instance, the processor and the memory and the storage
+are all tightly, already coupled together.
+It's one big monolithic block.
+Big here, is relative, of course.
+Here's a complete example for a microcontroller.
+You've got your memory.
+You've got your RAM.
+You've got your processor.
+Everything is fused into one single block
+that you buy, which is quite unlike when you
+buy your parts for a regular desktop computer, where you get to cherry pick
+and choose these different things.
+And you can build them in any configuration you want.
+For instance, my laptop has 32 gigabytes of memory,
+which is something I custom ordered from Apple.
+Versus is if you buy the stock laptop, it only
+comes with 16 gigabytes of memory.
+So I have this option to configure what kind of system I wanted.
+But if I'm looking at a microcontroller, mm-hmm.
+It's all packaged already into one single thing.
+So it's either I buy this microcontroller, or that configuration
+of the controller.
+That's one fundamental difference, major difference I want you to keep in mind.
+If I was to kind of generalize these into critical bullet points,
+I would say the microprocessor is the heart of a general purpose computing
+system, where a microcontroller is the heart of an embedded system.
+It's an embedded system, versus here, it's a general computer.
+A microprocessor is just one part, and it
+interfaces with external components of memory and storage,
+versus, in the context of a microcontroller,
+these things are all tightly integrated already into the system.
+Again, a microprocessor is more meant for general purpose
+systems like laptops, desktops, and servers,
+where you get to configure things.
+Microcontrollers are typically designed for fixed function tasks,
+like be able to play music on an MP3 player,
+or be able to answer phone calls.
+That's a very specific task.
+So microcontrollers generally tend to be quite preset in their functionality.
+And often, a big embedded system might include a phone, which
+is a very complex embedded system.
+Might include a whole bunch of different microcontrollers
+that are all fused together, in order to be able to provide
+different kinds of functionality.
+Now because of flexibility, a microprocessor
+ends up being very big, in fact, because your laptop is bigger.
+You get to put all these parts together.
+Those interfacing capabilities naturally lend themselves to being big.
+A microcontroller is all about making them tiny, because this form
+factor is small, so you tend to squeeze things down.
+Now, these key differences, if I was to step back
+up just kind of put some number ballpark numbers around,
+in order to kind of set the context of what a microcontroller really
+looks like, well let's take a look.
+From a computing perspective, if you look at what's
+called the frequency or the clock rate, how fast the processor can run.
+If you look at a regular microprocessor, it
+can run between 1 gigahertz and 4 gigahertz,
+versus a microcontroller can run between 1 Hertz and 4 Hertz.
+From a memory standpoint, you can have megabytes
+to gigabytes of memory, versus you only tend
+to have small little kilobytes of memory on a microcontroller.
+Storage tends to be in the order of gigabytes
+to terabytes, versus in a microcontroller,
+it tends to be kilobytes to megabytes.
+From a power consumption it's in the order of 10's of watts,
+versus is in the microcontroller, as I showed you in the previous video,
+it's in the order of microwatts or milliwatts.
+So it's a very, very big difference.
+There is stark contrast.
+It's in the order of magnitude difference,
+in terms of the compute, memory, storage, and the power consumption.
+and so forth.
+So the devices that we're talking about are extremely small.
+That's the key takeaway down here.
+Now what are the implications of all of this?
+What does it mean to have less amount of memory?
+What does it mean to have lower power consumption?
+Well, that means you got to think about how complicated
+is the task that we're running?
+Remember if you go back a couple of videos,
+I was emphasizing that in this particular tiny amount course,
+we're going to learn about the interaction between the machine
+learning, the embattled system, and the actual application.
+Well, if you want to understand the task,
+if I want to have smart glasses for instance,
+if it needs extremely high real-time processing, that
+is being able to have computing capability where
+everything runs extremely fast, well, microcontroller
+might not be a good fit.
+That's not to say that it's not always a good fit.
+It depends on what task you're trying to perform.
+Secondly, it's like how much memory do I really need?
+Microcontrollers come in all sorts of different forms and sizes.
+For example here, we're looking at anything between two kilobytes and 512
+kilobytes.
+If you understand the task you want to run,
+and you understand the requirements, then
+you'll be able to pick the right microcontroller.
+And the other question is, how long does a job have to perform?
+Is it something that needs to be constantly running,
+or is it running intermittently?
+Well that has implications in terms of the power consumption.
+We'll go into these things in a lot more detail as we step through the program.
+So, the key takeaway that I'm trying to emphasize down here,
+is that the microcontrollers that we're talking about,
+which are ubiquitous, the beauty about them is that they're ubiquitous.
+But the downside is that they're very constrained,
+in terms of the capabilities.
+But that's OK.
+There are means and ways to which we can overcome those obstacles.
+We'll get through those things.
+But once you understand the confines, the scope, and the limits,
+then you will have a deeper appreciation for what
+it means to be able to deploy intelligence
+onto these heavily-resourced constrained devices.
+And in the next video, we'll go a little bit further,
+talking more about the software side of the constraints I'll see you soon.
