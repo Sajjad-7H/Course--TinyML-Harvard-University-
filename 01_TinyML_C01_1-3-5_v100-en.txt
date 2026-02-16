@@ -1,0 +1,278 @@
+VIJAY REDDI: Welcome back.
+And in this video, I'm going to pick up on talking
+about what are the challenges in terms of making machine
+learning models that are big--
+how do we squeeze them down?
+I'm going to give you a preview some of the things
+that we will be looking at in a lot more detail later on.
+Now, from a model perspective-- one of the key things
+is when you have a machine learning model,
+it's all about how well can you shrink or compress the model down
+without losing its ability to fundamentally look
+for patterns in data?
+Because that's what machine learning is, remember?
+So, how can we go about doing this?
+Let me give you a quick sampling for the kind of things
+that we will be getting into a lot more detail later on.
+So, some examples and techniques that we'll be talking about
+are like pruning.
+Pruning is this idea that if I have a network, then think of this network
+as having a bunch of connections.
+And that's effectively a model.
+When I prune, what I want to do is I want
+to be able to take some of the connections away.
+And when I take some of the connections away,
+the question is, is this left hand side figure
+able to produce the same correct result as the right hand result?
+Sometimes it can actually lose the accuracy-- as we call it--
+or sometimes it might be able to maintain the accuracy.
+We might also be able to remove certain neurons completely out of it.
+Thereby, further reducing the amount of computation that's actually needed.
+And in doing so, we shrink the size of the network
+and we also reduce the computational demand of the network.
+And therefore, we can effectively squeeze this onto a tiny amount of ice.
+And this is a very primitive technique that we will actually
+be using later on to be able to shrink our models down and deploy
+them efficiently.
+Another thing that we can do is actually play around
+with the numerical representation.
+The values that we actually compute on.
+Because recall that embedded systems don't have fancy hardware or they
+tend to do very simple sort of arithmetic
+because they are supposed to be lean and mean as compared
+to general-purpose computing systems.
+So a technique that we will be using quite heavily is called quantization.
+Quantization is basically this notion that you have a floating point value.
+Remember 22 by seven?
+That's a floating point value.
+You take that floating point value, which
+is a long number of digital decimal places in place.
+And you quantize it down.
+Quantization means discretizing the values down
+to a small subset of values.
+So here, the end eight is basically going from negative 128 to 127,
+which allows you to represent 256 values.
+Now because you are now only having 256 values,
+you have to shrink that whole range down,
+which means you might lose some sort of values that would otherwise be
+represented in a floating point value.
+Why in the world would I ever want to do that?
+Well, a floating 0.32 bit value takes a whole four bytes
+to represent-- four bytes.
+Versus an end eight value is simply one byte,
+which means I get a 4x reductions by simply doing the quantization which is
+a huge boom or boost in the model size.
+So now I've shrunk it automatically down by 4x.
+And there are a whole bunch of associated benefits
+that come along with it from a system implementation sort of standpoint
+that we'll talk about.
+But quantization is extremely critical for us
+because we are dealing with tinyML systems
+where we don't have too much memory and we don't have to much compute.
+Talking about compute, floating point values, as I said previously,
+floating point values need dedicated hardware
+often to be able to compute efficiently because floating point decimal
+arithmetic is actually quite complex.
+Versus int8, or just integer arithmetic, it is much more simpler
+and it's usually found on every single embedded device.
+So the key lesson here is that as we start thinking about embedded device,
+you want to think about how big the networks are, what sort of precisions
+they are being represented with, the numerical precision
+and numerical formats-- there are a slew of things that we need to learn.
+And I will teach you some of these things,
+the critical ones especially, as we progress through.
+There also some advanced techniques that are on the horizon
+that are quite important for TinyML.
+For example, things like knowledge distillation.
+Knowledge distillation is a really nice fancy buzzword
+for explaining how a teacher, who knows a lot from years of wisdom
+and has a lot of information, is able to distill down
+the critical information for the student without losing
+the nugget given a particular task.
+So the benefit of this, ultimately, is that a teacher network might be big.
+A student network might be small.
+Later on, we'll get into how a teacher network actually translates over
+to a student network and how we can actually use this mechanism
+to take something that a bigger machine learning task
+knows how to do and be able to shrink things
+down so that the tiny, small little machine learning model actually
+knows how to do things better.
+Again, this is just a sneak preview of what's coming down the pipe later.
+Now, that's more from an algorithm and modeling sort of perspective,
+what the algorithms look like.
+But there is also stuff you need to know at the runtime level, which is really
+fun, and it's actually one of my favorite topics, by the way.
+So, at the runtime level, you need to start thinking about the hardware
+first.
+When you have this big cloud TPU in its Google building,
+where they want to be able to run many different kinds of machine learning
+tasks, for instance, you need a framework, a software framework.
+And so, typically, people deal with TensorFlow.
+TensorFlow is a beautiful framework in which
+you can write machine learning code.
+Now if I want to do machine learning on a smaller device,
+like a smartphone, which has got a much smaller computing capability, if you
+recall from the previous videos--
+the A12 processor, for instance-- is much smaller.
+Well, if you do that, you realize that this particular system has
+much less memory than a big cloud TPU normally would.
+And then it would also have much less compute power,
+and it's only focused on making inferences.
+In other words, a cloud TPU might actually
+have to learn how to detect patterns in the data.
+The smartphone is always going to be just basically looking
+for patterns in the data.
+There's a big difference where you're learning how to do things
+and where you only execute.
+Learning something takes a lot of time.
+For instance, I bet you right now you're learning about tinyMLs,
+so your brain is exploding with information
+that it has to process and figure out all the connections that I'm
+teaching to you.
+Well, once you learn about tinyML, after you graduate from this program,
+you're going to be like a maestro, a tinyML.
+You wouldn't worry.
+You would already know about it, so you wouldn't
+be thinking so hard about it, right?
+It's the exact same notion here.
+Training versus inference.
+Your smartphone is only looking for interesting patterns, for instance.
+So if that's the case, then you don't want to necessarily use TensorFlow
+because it's a rather big framework.
+What you'd rather have is a smaller, leaner and meaner software framework
+that is dedicated to just meeting the specific requirements that
+are needed on a smartphone.
+For instance, something that takes less memory.
+Something that has less computational power requirements.
+Something that only focuses on looking for patterns of data, quote,
+unquote, "inference."
+So if I were to put these two systems next to one another head to head,
+I'm going to start at the ultimate bottom line
+and work my way upwards since this is the most important point here.
+Who are these frameworks targeted at?
+For instance, like, if you look at TensorFlow versus TensorFlow Lite,
+these are two different software framework.
+TensorFlow is really targeted at a machine learning researcher
+who is trying to figure out how to actually build
+the machine learning algorithm.
+TensorFlow Lite is really focused on an application developer
+who is really interested in using the machine learning algorithm that
+comes out and integrating that into an application that provides end user
+service to you and me.
+That's the fundamental difference.
+And because of this, the frameworks have fundamentally different philosophies.
+For example, TensorFlow has to do distributed compute.
+It has to use many cloud TPUs, for instance, or many GPUs all
+at the same time to try and get the machine
+learning algorithm to learn the patterns that it finds in the data.
+Well, we're not learning things on the mobile device.
+We're just exercising what we already learned,
+so you don't need to communicate with a whole bunch of different smartphones.
+That's a simplification in the software stack.
+The binary size, when you're running things in big data centers
+with those big processors that are all coupled together
+like I showed in the previous videos, well,
+you're not really worried about how much memory the software framework
+is taking.
+But if you're talking about putting that little TensorFlow
+framework onto a smartphone, you're really
+concerned about how much memory it's consuming because you
+don't want it to use up all the space.
+And once we get into the machine learning model itself
+because we're dealing with--
+we're training.
+In other words, we're learning.
+There are things that are variable, just like our neurons are
+variable in our head.
+We're constantly adjusting as we are trying to learn things.
+But once we learn it, we don't even think about it.
+We just execute things really fast.
+It's almost like a muscle memory or gut reaction.
+Same thing for how the topology of the network looks like.
+Topology is nothing but a fancy buzzword for saying,
+what do your connections look like.
+And in TensorFlow, because you're still learning to find patterns in data,
+you're constantly adjusting things, and you need to be flexible.
+But again, on TensorFlow Lite, when I already
+know the task that I'm going to perform, I don't need any flexibility.
+All of these things, these are just a sampling of the things.
+But the key thing I'm trying to get to is
+that there are big differences based on the system you're targeting
+and what the software is going to look like,
+and you need to understand the software to be
+able to deploy things efficiently.
+The critical difference here between TensorFlow and TensorFlow Lite
+is the difference as to where you're deploying it.
+So what's a typical pipeline look like?
+The first time when you're learning a model,
+if you want to be able to enhance a picture in your camera--
+and what you have to do is you have to learn how to enhance that.
+You have to find interesting patterns and data
+and learn how to make that happen.
+After that, once you've already figured that out,
+you just want to make it like a function call.
+You just call it.
+So we have something.
+Let's call it TensorFlow Lite Converter that
+converts a big beefy model into something lean and mean.
+That gives you a file that's called .tflite that's nice and thin.
+And you take that, and then you can deploy this
+into different kinds of smartphone devices.
+So this is your general pipe.
+You started with a lot of flexibility, and then you shrink things down,
+and you make them lean and mean, and then
+you target them for the specific device.
+This is effectively what we need to enable the next major step going
+from big processors over to smartphone processors
+into the next smallest little thing.
+The question is, how do we do it?
+These devices have even less memory.
+They have even less power as we've looked at before.
+And they're only focused on inference, very much like a smartphone.
+So for this, we're going to need to look at a software stack, which
+is a TensorFlow Lite software stack.
+Specifically, if you look at the training pipeline, for instance,
+or how things happen, you use TensorFlow right at the beginning,
+then after that were the conversion, the optimization, the deployment,
+and the usage is all kind of tied down with TensorFlow Lite.
+And when you deploy the model, you're typically
+going to be deploying it on any given kind of system.
+On a smartphone, it's in iOS or Android or maybe a Linux
+kind of platform, which you might target a bigger embedded kind of device.
+Or, in the case of microcontrollers, you want
+to deploy it what you need is a TF Lite engine,
+and then you can finally start using it for doing tasks.
+So I'm just showing a smartphone here as an example,
+but the general idea is that once you manage
+to squeeze things out and put them on the device,
+then you can start repeatedly using it.
+For all of that, we'll be focusing on TensorFlow Lite.
+So we'll walk you through from TensorFlow to TensorFlow Lite
+to, in fact, what's called TensorFlow Micro.
+That's at the runtime level.
+So we talked about the models, we talked about the runtimes,
+and at the hardware as well there's a lot of innovation going on specifically
+to make tinyML very efficient.
+Now, in this series of courses, I'm not going
+to emphasize that much on the hardware.
+I'll give you inclinations about the kind of things that are coming down.
+You will be knowledgeable by the time you finish this program in terms
+of what kind of trends and patterns we're
+seeing in terms of the industry, where the industry is going.
+But, that said, this is going to require you
+to take a dedicated course that's specifically focused
+on building machinery and hardware.
+Nonetheless I will give you enough clues and tips all through the thing in order
+to cover all three layers.
+Now, with that said, what I'm trying to wrap up here
+is that in the last four videos, including
+this one, what we saw was specifically some of the challenges
+that we're going to have in terms of the embedded system side
+and the machine learning side in order bring them together
+to fit inside a tiny little device.
+Over the course of the program I'm going to promise you
+that we're going to learn how to resolve these issues.
+I gave you are a very high-level sampling,
+but hopefully this sets the stage in your head as to what kind of things
+we are going to be picking up as we progress through the program.
+I will see you in the next video.
