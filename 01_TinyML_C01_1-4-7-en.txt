@@ -1,0 +1,47 @@
+VIJAY JANAPA REDDI: Welcome back from the video on TensorFlow.
+Hopefully, what you have learned from the video
+is that you have understood that TensorFlow is a critical software
+piece of infrastructure that is needed, in order
+to be able to train a machine learning model,
+in order to be able to teach an algorithm,
+to look for interesting patterns in data, and how we go about doing that.
+We will be training models, specifically in the context of TinyML.
+But as you might recall, from the earlier videos,
+I told you the TensorFlow is big, bulky, and beefy.
+Why?
+Because it was originally designed for big computing systems.
+But as we move into deploying things on small, little embedded
+microcontrollers, what we need to do is to think about how
+we make the system lean and mean.
+And that's why TensorFlow Lite was developed.
+TensorFlow Lite goes through a series of steps in taking that big model
+and converting it down into a format that
+is much smaller, much more compact, and much more
+suitable for the endpoint devices.
+In addition, it does optimizations like the ones
+that I hinted, talking about pruning, and quantization, and so forth.
+And then, finally, sets up the model, so that it's effectively
+deployable on the edge, where you can actually do inferences.
+Now, all of that is extremely important.
+In fact, I would argue that if you want to learn about TinyML,
+you should learn about how to train the model.
+But of course, you also got to learn how to deploy
+the model under the specific constraints of an embedded microcontroller.
+So we will be stepping through how to use this TensorFlow stack properly,
+the architecture, in order to train a model
+and target a very specific microcontroller.
+But one of the key things I'm going to make sure that I enforce to you
+is that the lessons that you learn, as we
+step through this process [INAUDIBLE] generalizable
+so that you can actually change the microcontroller that we
+might be looking at.
+And then, still, all the things you have learned, in going from training,
+to deployment, onto the microcontrollers is totally valid.
+With that said, I hope you have gotten all the tools
+that you need to know about.
+And if there's any questions or any doubts,
+feel free to just post them on the forum.
+And I'm sure some one of us will be able to reply.
+Or the vast community of your colleagues and students,
+who are taking this class, will actually be able to help you out.
+I'll see you soon.

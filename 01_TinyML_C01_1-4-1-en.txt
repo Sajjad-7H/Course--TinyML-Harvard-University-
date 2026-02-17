@@ -1,0 +1,41 @@
+VIJAY JANAPA REDDI: Hi In this video, I want
+to talk a little bit about the resources you need.
+So you're well prepared for the entire program.
+Starting with course 1, where we will be focused
+on the fundamentals of machine learning, what you really need are quite simple.
+You just need an internet connection in order to be able to watch your videos,
+and you need a Chrome browser.
+The Chrome browser is a specific requirement primarily because we will
+be using a programming environment called Google Colab which is going
+to rely on working well with Chrome.
+So if you use Chrome, you will likely not have too many issues.
+And so we strongly encourage you to use that browser.
+Then, as we move on into the applications of TinyML,
+we will need a little bit more than what we needed in course 1.
+Specifically, we will need your laptop or your desktop
+to have a microphone and a laptop camera.
+Why do we need that?
+Don't worry.
+We're not trying to listen in on you, like we did
+when we talked about responsible AI.
+Why we need those devices are primarily because we want to engage with you.
+We want to be able to get you to actually train
+you own special word that wakes the machine up, for instance.
+And in order to be able to do that, you're
+going to want to collect a bit of data from the microphone
+by saying different words, understanding how to say it in different ways,
+so that your model is general and flexible enough,
+or capture different kinds of images.
+So we want you to be able to have access to a camera and a microphone.
+Then, as we go into course 3, things will get even more fun,
+because we'll be giving you a special kit.
+And the kit needs you to physically interface the microcontroller
+board with your laptop.
+And so in addition to the things you need from course 2,
+in course 3 we will be adding a couple of extra parts.
+And together, you will be effectively building
+on all the things you've learned as you step through the courses.
+And with that, I want you to have a really good time,
+and I want you to be prepared for this course.
+So please make sure you have all the resources you need,
+and I will see you in the next video.

@@ -1,0 +1,46 @@
+VIJAY JANAPA REDDI: Welcome back.
+I'm glad you had an introduction to Colab.
+Now in this video, what I want to talk a little bit about
+is how we will be using Colab in order for learning tiny machine learning.
+Well, first and foremost, we will be doing
+a code walkthrough of algorithms and different kinds of concepts
+using Colab.
+For example, we will be looking at a small snippet
+of algorithmic code for the machine learning model,
+and we will learn how to tweak it in Colab.
+And then, there will be quizzes and assessments
+that will help you kind of internalize those critical concepts by having
+you fill in some of the blanks that are out there.
+In addition, because we will be using the TensorFlow framework through Colab,
+one of the critical things that we will be doing
+is we will be using the power of the cloud
+in order to train our neural network sufficiently.
+If you tried to teach the machine learning models
+to look for interesting data patterns manually on your laptop is what exactly
+I mean.
+If you try and do that, there will be cases where you
+might have to wait for a month or more.
+Instead, if we use the capabilities that Google Colab gives us in order
+to train our networks much faster, then we
+will be able to accelerate the whole learning
+process by using GPUs for instance.
+And that's going to save you a lot of time.
+Trust me, there are assignments in this program that will sometimes need
+about 13 hours or so in order to train.
+But don't worry about that.
+We won't have you sitting in front of the screen for 13 hours.
+We have found ways to kind of improve that experience.
+Another way that we will be using Google Colab
+is to help you analyze the way that the algorithms are actually learning.
+So we will be visualizing interesting characteristics
+about the machine learning training that is actually happening.
+And in doing so, you will understand what
+are some of the critical implications of the way you set some hyper
+parameters, like learning rate, for instance,
+or what's the impact of the loss function?
+These are things that we will be getting into in the next chapter.
+So with that said, I hope you got a little bit of information
+about Google Colab.
+And once you start using it, I promise you,
+you will feel much more comfortable.
+And I'll look forward to seeing you soon.
